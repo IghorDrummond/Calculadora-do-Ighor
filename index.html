@@ -1,0 +1,156 @@
+<html>
+	<head>
+		<title>Minha Calcula</title>
+		<script>
+			function soma(){
+				var valor = document.getElementById("camp").value;
+				var valor2 = document.getElementById("camp2").value;
+				var total = parseFloat(valor) + parseFloat(valor2);
+
+				if(total == 0){
+					document.getElementById("total").innerHTML = "Sua soma foi 0";
+				}
+				else{
+					document.getElementById("total").innerHTML = "A soma do valor" + " " + valor + " com o valor" + " " + valor2 + " é de:" + " "+ total;
+				}
+			}
+			function subtracao(){
+				var valor = document.getElementById("camp").value;
+				var valor2 = document.getElementById("camp2").value;
+				var total = parseFloat(valor) - parseFloat(valor2);
+
+				if(total == 0){
+					document.getElementById("total").innerHTML = "Sua Subtração é 0";
+				}
+				else{
+					document.getElementById("total").innerHTML = "A subtração do valor" + " " + valor + " com o valor" + " " + valor2 + " é de:" + " "+ total;
+				}
+			}
+			function divisao(){
+
+				var valor = document.getElementById("camp").value;
+				var valor2 = document.getElementById("camp2").value;
+				if(valor == 0 && valor2 == 0){
+					document.getElementById("total").innerHTML = "Impossivel dividir zero por zero!";
+				}
+				else{
+					var total = parseFloat(valor) / parseFloat(valor2);
+
+					if(total == 0){
+						document.getElementById("total").innerHTML = "Sua divisão é 0!";
+					}
+					else{
+						document.getElementById("total").innerHTML = "A divisão do valor" + " " + valor + " com o valor" + " " + valor2 + " é de:" + " "+ total;
+					}
+				}	
+			}
+			function multiplicacao(){
+				var valor = document.getElementById("camp").value;
+				var valor2 = document.getElementById("camp2").value;
+				var total = parseFloat(valor) * parseFloat(valor2);
+
+				if(total == 0){
+					document.getElementById("total").innerHTML = "a sua multiplicação foi 0";
+				}
+				else{
+					document.getElementById("total").innerHTML = "A multiplicação do valor" + " " + valor + " com o valor" + " " + valor2 + " é de:" + " "+ total;
+				}
+			}
+			function expoente(){
+				var valor = document.getElementById("camp").value;
+				var valor2 = document.getElementById("camp2").value;
+				if(valor == 0 && valor2 == 0){
+					document.getElementById("total").innerHTML = "o se o x for zero e seu numero elevado também for zero, o total será sempre 1."
+				}
+				else{
+					var total = parseFloat(valor) ** parseFloat(valor2);
+
+					if(total == 0){
+						document.getElementById("total").innerHTML = "o valor da usa conta elevada foi 0";
+					}
+					else{
+						document.getElementById("total").innerHTML = "O valor" + " " + valor + " elevado a" + " " + valor2 + " é de:" + " "+ total;
+					}
+				}	
+			}
+		</script>	
+		<style>
+			#pintar{
+				background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+				text-align: center;
+				align-content: center;
+			}
+			#geral{
+				width: 700px;
+				height: auto;
+				margin: auto;
+				border: 2px solid black;
+				text-align: center;
+				align-content: center;
+				background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+			}
+			#campo{
+				width: 80%;
+				height: auto;
+				text-align: center;
+				align-content: center;
+				margin: auto;
+			}
+			#tabela{
+				text-align: center;
+				align-content: center;
+			}
+			#campo3{
+				width: 50%;
+				height: 60px;
+				background-color: white;
+				border: 2px solid black;
+				margin: auto;
+			}
+			.botao{
+				width: 40px;
+				height: 30px;
+				background-color: orange;
+				border: 2px solid black;
+
+			}
+		</style>	
+	</head>
+	<body id="pintar">
+		<h1>Calculadora do Drummas</h1>
+		<div id="geral">	
+			<div id="campo">
+				<table id="tabela" cellpadding="5" cellspacing="10">
+					<thead id="tabela">
+						<th>Insira o valor:</th>
+						<th> </th>
+						<th>Insira o valor:</th>
+					</thead>
+					<tbody id="tabela">
+						<td><input id="camp" type="number" value="0" ></td>
+						<td><p id="sinais"> </p></td>
+						<td><input id="camp2" type="number" value="0"></td>
+					</tbody>
+					<tfooter>
+						<td colspan="3">aperte no botão qual operação matemática você deseja usar e automaticamene sairá o resultado no campo e baixo.</td>
+					</tfooter>
+				</table>
+			</div>
+			<div id="campo2">
+				<button class="botao" onclick="soma()">+</button>
+				<button class="botao" onclick="subtracao()">-</button>
+				<button class="botao" onclick="divisao()">÷</button>
+				<button class="botao" onclick="multiplicacao()">x</button>
+				<button class="botao" onclick="expoente()">x²</button>
+				<br />
+				<hr />
+				<br />
+				<div id="campo3"> 
+					<p id="total">Aqui sairá o resultados</p>
+				</div>
+			</div>	
+			<h6>Calculadora By Ighor Drummond - 2022 </h6>
+		</div>	
+		
+	</body>
+</html>	
